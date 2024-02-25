@@ -8,7 +8,7 @@ const Main = () => {
 
     const getNews = async () => {
         try {
-            const response = await fetch(`https://newsapi.org/v2/everything?q=${menu}&sortBy=popularity&apiKey=${process.env.REACT_APP_SECRET_KEY}`);
+            const response = await fetch(`https://gnews.io/api/v4/everything?q=${menu}&sortBy=popularity&token=${process.env.REACT_APP_SECRET_KEY}&max=10`);
             console.log(response);
             const json = await response.json();
             setNews(json.articles); // Assuming the articles are stored in the 'articles' property of the JSON response
